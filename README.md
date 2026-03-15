@@ -1,74 +1,71 @@
-# 新型コロナウイルス感染症　支援情報ナビ オープンソース版
+# covid19-supportnavi
 
-## 概要
+## Overview
 
-「新型コロナウイルス感染症 支援情報ナビ オープンソース版」は、行政サービス情報の詳細データを読み込ませることで簡単に支援情報ナビを作成できます。
-新型コロナウイルス感染症 支援情報ナビ オープンソース版は以下の特徴があります。
+"covid19-supportnavi" is an open-source project that allows you to easily create a support information navigator by loading detailed administrative service information.
+The covid19-supportnavi has the following features:
 
-* 東京都の「新型コロナウイルス感染症 支援情報ナビ」と同様に「自分にあった制度を探す」、「テーマ別に制度を見る」の機能が使用できる
+* Can use the same "search for the system that suits you" and "view the system by theme" functions as the "Support Information Navigator for COVID-19" of the Tokyo Metropolitan Government
 
-* 行政サービス情報のファイルを用意することで、簡単にデータが更新できる
+* The administrative service information file can be prepared to easily update the data
 
-* ナビロジックのファイルを用意することで、簡単にロジックの更新できる
+* The navigation logic file can be prepared to easily update the logic
 
-また、東京都の「新型コロナウイルス感染症 支援情報ナビ」と以下の差異があります。
+The differences from the "Support Information Navigator for COVID-19" of the Tokyo Metropolitan Government are as follows:
 
-* 「キーワードで検索する」機能が付属していない
-* 「区市町村の関連情報を見る」機能が付属していない
-* 「医療関係者向け」のメニューがない
+* Does not have the "search by keyword" function
+* Does not have the "view the related information of the city/ward" function
+* Does not have the "for medical personnel" menu
 
-※差異があるためPull requestをいただいても「新型コロナウイルス感染症　支援情報ナビ」に反映できない可能性があります。
+Please refer to the manual.pdf in the repository for more details on how to use it.
 
-より詳細な利用方法に関しては、リポジトリ内の manual.pdf をご覧ください。
+## Installation
 
-## インストール
+First, copy all the files in the repository to your local machine.
 
-はじめに、リポジトリのファイルをすべてローカルマシンにコピーします。
-
-Git クライアントを使用する場合は次のコマンドでコピーすることができます。
+If using a Git client, you can copy them with the following command:
 
 ```
 git clone https://github.com/code4fukui/covid19-supportnavi.git
 ```
 
-つぎに依存モジュールをインストールします。
+Next, install the dependent modules.
 
 ```
 npm install
 ```
 
-次のコマンドでサイトのファイル一式を生成することができます。
+You can generate the entire set of site files with the following command.
 ```
 npm run build
 ```
 
-ファイルは `dist` フォルダ内に生成されます。
+The files will be generated in the `dist` folder.
 
-## 使用方法およびカスタマイズ方法
+## Usage and Customization
 
-### サービス情報の一覧の設定
+### Setting the list of service information
 
-manual.pdf 内の「行政サービス情報csvについて」を参照してください。
+Refer to "About the administrative service information csv" in the manual.pdf.
 
-### ナビゲーションのデータ設定
+### Setting the navigation data
 
-manual.pdf 内の「ナビロジックcsvについて」を参照してください。
+Refer to "About the navigation logic csv" in the manual.pdf.
 
-### 配色の変更
+### Changing the color scheme
 
-次の cssファイルを編集することにより配色を変更することができます。
+You can change the color scheme by editing the following CSS files:
 
 - static\styles\color-def-dark.css
 - static\styles\color-def-default.css
 - static\styles\color-def-light.css
 
-## 更新履歴
+## Update History
 
+| Date | Version | Notes |
+| ---- | ------- | ----- |
+| 2021-11-12 | Initial | - |
 
-| 日付  | バージョン | 備考 |
-| ------ | ---------------- | ---- |
-| 2021-11-12 | 初版  |      |
+## License
 
-## ライセンス
-
-新型コロナウイルス感染症　支援情報ナビ オープンソース版は MIT ライセンスにより提供されています。ライセンスの詳細についてはライセンスドキュメント（[LICENSE.md](LICENSE.md)）を参照してください。
+The covid19-supportnavi is provided under the MIT License. For details on the license, please refer to the license document ([LICENSE.md](LICENSE.md)).
