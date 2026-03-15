@@ -1,5 +1,7 @@
 # covid19-supportnavi
 
+> 日本語のREADMEはこちらです: [README.ja.md](README.ja.md)
+
 ## Overview
 
 "covid19-supportnavi" is an open-source project that allows you to easily create a support information navigator by loading detailed administrative service information.
