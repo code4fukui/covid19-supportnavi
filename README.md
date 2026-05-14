@@ -1,74 +1,80 @@
-# 新型コロナウイルス感染症　支援情報ナビ オープンソース版
+# covid19-supportnavi
 
-## 概要
+> 日本語のREADMEはこちらです: [README.ja.md](README.ja.md)
 
-「新型コロナウイルス感染症 支援情報ナビ オープンソース版」は、行政サービス情報の詳細データを読み込ませることで簡単に支援情報ナビを作成できます。
-新型コロナウイルス感染症 支援情報ナビ オープンソース版は以下の特徴があります。
+An open-source project that allows you to quickly create a support information navigator site, modeled after the Tokyo Metropolitan Government's "Support Information Navigator for COVID-19". This tool helps citizens and businesses find relevant administrative services through an interactive questionnaire.
 
-* 東京都の「新型コロナウイルス感染症 支援情報ナビ」と同様に「自分にあった制度を探す」、「テーマ別に制度を見る」の機能が使用できる
+## Features
 
-* 行政サービス情報のファイルを用意することで、簡単にデータが更新できる
+-   **Interactive Questionnaire:** Guides users to the support systems that suit them through a series of questions (e.g., "Are you a business or an individual?").
+-   **Thematic Browsing:** Allows users to view all available support systems grouped by theme.
+-   **Data-Driven Content:** The navigator's logic and service information are loaded from two CSV files, making updates simple and code-free.
+-   **Customizable Appearance:** Easily change the site's color scheme by editing CSS variables. Three themes are provided by default: Default, Light, and Dark.
+-   **Accessibility Controls:** Includes built-in UI controls for changing color schemes and adjusting font size.
+-   **Static Site:** Generates a full set of static HTML, CSS, and JS files that can be deployed to any static web host.
 
-* ナビロジックのファイルを用意することで、簡単にロジックの更新できる
+## Getting Started
 
-また、東京都の「新型コロナウイルス感染症 支援情報ナビ」と以下の差異があります。
+### Prerequisites
 
-* 「キーワードで検索する」機能が付属していない
-* 「区市町村の関連情報を見る」機能が付属していない
-* 「医療関係者向け」のメニューがない
+-   [Node.js](https://nodejs.org/)
+-   [npm](https://www.npmjs.com/)
 
-※差異があるためPull requestをいただいても「新型コロナウイルス感染症　支援情報ナビ」に反映できない可能性があります。
+### Installation
 
-より詳細な利用方法に関しては、リポジトリ内の manual.pdf をご覧ください。
+1.  Clone the repository to your local machine:
+    ```bash
+    git clone https://github.com/code4fukui/covid19-supportnavi.git
+    cd covid19-supportnavi
+    ```
 
-## インストール
+2.  Install the required dependencies:
+    ```bash
+    npm install
+    ```
 
-はじめに、リポジトリのファイルをすべてローカルマシンにコピーします。
+### Running in Development Mode
 
-Git クライアントを使用する場合は次のコマンドでコピーすることができます。
+To start a local development server, run:
 
+```bash
+npm start
 ```
-git clone https://github.com/code4fukui/covid19-supportnavi.git
-```
 
-つぎに依存モジュールをインストールします。
+This will launch a server at `http://localhost:8080`. In development mode, you can test new data by simply **dragging and dropping your updated CSV files** onto the browser window. The site will load them and update the navigator instantly.
 
-```
-npm install
-```
+### Building for Production
 
-次のコマンドでサイトのファイル一式を生成することができます。
-```
+To generate the static site files for deployment, run:
+
+```bash
 npm run build
 ```
 
-ファイルは `dist` フォルダ内に生成されます。
+The complete site will be generated in the `dist/` directory. You can then upload the contents of this directory to your web host.
 
-## 使用方法およびカスタマイズ方法
+## Customization
 
-### サービス情報の一覧の設定
+The primary way to customize the navigator is by providing your own data files.
 
-manual.pdf 内の「行政サービス情報csvについて」を参照してください。
+### Service Information Data
 
-### ナビゲーションのデータ設定
+This file contains the details of each administrative service.
+-   **For detailed schema and instructions, please refer to "About the administrative service information csv" in `manual.pdf`.**
 
-manual.pdf 内の「ナビロジックcsvについて」を参照してください。
+### Navigation Logic Data
 
-### 配色の変更
+This file defines the questions, answers, and branching logic of the interactive navigator.
+-   **For detailed schema and instructions, please refer to "About the navigation logic csv" in `manual.pdf`.**
 
-次の cssファイルを編集することにより配色を変更することができます。
+### Color Scheme
 
-- static\styles\color-def-dark.css
-- static\styles\color-def-default.css
-- static\styles\color-def-light.css
+You can modify the site's appearance by editing the CSS variable definitions in the following files:
 
-## 更新履歴
+-   `static/styles/color-def-default.css` (Standard theme)
+-   `static/styles/color-def-light.css` (Light theme)
+-   `static/styles/color-def-dark.css` (Dark theme)
 
+## License
 
-| 日付  | バージョン | 備考 |
-| ------ | ---------------- | ---- |
-| 2021-11-12 | 初版  |      |
-
-## ライセンス
-
-新型コロナウイルス感染症　支援情報ナビ オープンソース版は MIT ライセンスにより提供されています。ライセンスの詳細についてはライセンスドキュメント（[LICENSE.md](LICENSE.md)）を参照してください。
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
